@@ -1,7 +1,7 @@
 <h1>Login</h1>
 
-email: <input type="text" name="email" value={{email}}><br>
-password: <input type="password" name="password" value={{password}}><br>
+email: <input type="text" name="email" bind:value='email'><br>
+password: <input type="password" name="password" bind:value='password'><br>
 <button on:click='login(email, password)'>click and hold</button>
 
 <script>
