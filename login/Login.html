@@ -1,37 +1,19 @@
 <h1>Login</h1>
 
-email: <input type="text" name="fname"><br>
-password: <input type="text" name="lname"><br>
-<button on:click='login()'>click and hold</button>
+email: <input type="text" name="email" value={{email}}><br>
+password: <input type="password" name="password" value={{password}}><br>
+<button on:click='login(email, password)'>click and hold</button>
 
 <script>
   export default {
-    events: {
-      login()(node, callback) {
-        console.log('login user');
-        if(validate()) {
-          api.login();
-        }
-
-        return {
-          teardown () {
-            console.log('teardown');
-          }
-        };
-      };
+     methods: {
+      login (email, password) {
+        console.log(email + password);
+      }
     }
   }
 
 function validate() {
-  console.log('validate login form');
   return true;
-}
-
-var api = {
-  login: function() {
-    console.log('call the login endpoint');
-    // if fail show error
-    // if success - redirect to home
-  }
 }
 </script>
